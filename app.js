@@ -1,8 +1,8 @@
 // MODULE
-var weatherApp = angular.module('weatherApp', ['ngRoute', 'ngResource']);
+var weatherApp = angular.module("weatherApp", ['ngRoute', 'ngResource'])
 
 //ROUTES
-weatherApp.config(function($routeProvider){
+weatherApp.config(function ($routeProvider){
   
     $routeProvider
     .when('/', {
@@ -21,10 +21,11 @@ weatherApp.config(function($routeProvider){
 
 //controllers
 weatherApp.controller('homeController', ['$scope', function($scope){
-
+   
 }]);
 
 weatherApp.controller('forcastController', ['$scope', function($scope) {
 
 
 }]);
+
