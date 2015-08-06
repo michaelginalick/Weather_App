@@ -29,7 +29,7 @@ weatherApp.config(function ($routeProvider){
 //Services
 
 weatherApp.service('cityService', function() {
-    this.city = "New York, NY";
+    this.city = "Chicago, IL";
     
 });
 
@@ -47,7 +47,7 @@ weatherApp.controller('forcastController', ['$scope', '$resource', '$routeParams
     
     $scope.city = cityService.city;
     
-    $scope.days = $routeParams.days || 2;
+    $scope.days = $routeParams.days || '2';
     
     $scope.weatherAPI = $resource("http://api.openweathermap.org/data/2.5/forecast/daily", {callback: "JSON_CALLBACK" }, {get: {method: "JSONP" }});
     
