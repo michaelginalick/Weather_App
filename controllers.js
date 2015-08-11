@@ -1,7 +1,8 @@
 
 //controllers
-weatherApp.controller('homeController', ['$scope','$location', 'cityService', function($scope, $location, cityService){
+weatherApp.controller('homeController', ['$scope','$location', 'cityService', 'locationService', function($scope, $location, cityService, locationService){
     $scope.city = cityService.city;
+    
     $scope.$watch('city', function(){
         cityService.city = $scope.city;
         
@@ -9,7 +10,21 @@ weatherApp.controller('homeController', ['$scope','$location', 'cityService', fu
        $location.path("/forcast"); 
         };
     });
+    
+    
+    
+    
+    $scope.location = locationService.location;
+    
+    
+    
 }]);
+
+
+
+
+
+
 
 weatherApp.controller('forcastController', ['$scope', '$resource', '$routeParams', 'cityService', function($scope, $resource, $routeParams, cityService) {
     
@@ -28,5 +43,9 @@ weatherApp.controller('forcastController', ['$scope', '$resource', '$routeParams
     $scope.convertToDate = function(dt) {
       return new Date(dt * 1000)  
     };
+    
+    
+    
+    
     
 }]);
